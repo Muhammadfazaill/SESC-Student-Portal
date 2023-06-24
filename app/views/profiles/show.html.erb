@@ -1,0 +1,13 @@
+<h1>student profile</h1>
+
+<p>
+  First name: <%= @profile.name %>
+</p>
+
+<p>
+  Last name: <%= @profile.surname %>
+</p>
+
+
+<%= link_to "Edit", edit_profile_path(current_user), class: "btn btn-primary" %>
+<%= link_to "Destroy", @profile, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>

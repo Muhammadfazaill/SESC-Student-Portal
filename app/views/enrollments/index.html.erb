@@ -1,0 +1,27 @@
+<p id="notice" class="alert alert-info"><%= notice %></p>
+<% if @enrollment.present? %>
+<h1 class="mb-4">My Enrollment</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Reference No</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @enrollment.each do |enrollment| %>
+      <tr>
+        <td><%= enrollment.course.title %></td>
+        <td><%= enrollment.course.description %></td>
+        <td><%= enrollment.course.reference_no %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+  <h1>No enrollments found.</h1>
+<% end %>
